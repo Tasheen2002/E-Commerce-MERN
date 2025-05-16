@@ -23,11 +23,11 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="container mx-auto flex items-center justify-between px-10 py-4">
+      <nav className="container mx-auto flex items-center justify-between px-6 sm:px-10 lg:px-20 py-4">
         {/* left-logo */}
         <div>
           <Link to="/" className="text-2xl font-medium ">
-            Shoppy
+            Ezora
           </Link>
         </div>
 
