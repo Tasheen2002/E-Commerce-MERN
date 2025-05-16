@@ -43,16 +43,16 @@ const SearchBar = () => {
             >
               <HiMagnifyingGlass className="h-6 w-6" />
             </button>
-
-            {/* Close Icon */}
-            <button
-              type="button"
-              onClick={handleSearchToggle}
-              className="absolute -right-40 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800"
-            >
-              <HiMiniXMark className="h-6 w-6 " />
-            </button>
           </div>
+
+          {/* Close Icon */}
+          <button
+            type="button"
+            onClick={handleSearchToggle}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800"
+          >
+            <HiMiniXMark className="h-6 w-6 " />
+          </button>
         </form>
       ) : (
         <button onClick={handleSearchToggle}>
