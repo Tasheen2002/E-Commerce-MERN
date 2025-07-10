@@ -68,7 +68,12 @@ const ProductDetails = () => {
                 key={index}
                 src={image.url}
                 alt={image.altText || `Thumbnail ${index}`}
-                className="w-20 h-20 object-cover rounded-lg cursor-pointer border"
+                onClick={() => {
+                  setMainImage(image.url);
+                }}
+                className={`w-20 h-20 object-cover rounded-lg cursor-pointer border ${
+                  mainImage === image.url ? "border-black" : "border-gray-300"
+                }`}
               />
             ))}
           </div>
