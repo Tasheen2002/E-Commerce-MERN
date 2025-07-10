@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 const selectedProduct = {
   name: "Stylish Jacket",
@@ -22,6 +23,14 @@ const selectedProduct = {
 };
 
 const ProductDetails = () => {
+  const [mainImage, setMainImage] = useState("");
+
+  useEffect(() => {
+    if (selectedProduct?.images?.length > 0) {
+      setMainImage(selectedProduct.images[0].url);
+    }
+  }, [selectedProduct]);
+
   return (
     <div className="p-6">
       <div className="max-w-6xl mx-auto bg-white p-8 rounded-lg">
@@ -33,7 +42,12 @@ const ProductDetails = () => {
                 key={index}
                 src={image.url}
                 alt={image.altText || `Thumbnail ${index}`}
-                className="w-20 h-20 object-cover rounded-lg cursor-pointer border"
+                className={`w-20 h-20 object-cover rounded-lg cursor-pointer border ${
+                  mainImage === image.url ? "border-black" : "border-gray-300"
+                }`}
+                onClick={() => {
+                  setMainImage(image.url);
+                }}
               />
             ))}
           </div>
@@ -41,7 +55,7 @@ const ProductDetails = () => {
           <div className="md:w-1/2">
             <div className="mb-4">
               <img
-                src={selectedProduct.images[0]?.url}
+                src={mainImage}
                 alt="Main Product"
                 className="w-full h-auto object-cover rounded-lg"
               />
@@ -113,7 +127,7 @@ const ProductDetails = () => {
             </div>
 
             <button className="bg-black text-white py-2 px-6 rounded w-full mb-4">
-                ADD TO CART
+              ADD TO CART
             </button>
 
             <div className="mt-10 text-gray-700">
