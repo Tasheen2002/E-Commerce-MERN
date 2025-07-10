@@ -98,6 +98,22 @@ const ProductDetails = () => {
                 ))}
               </div>
             </div>
+
+            <div className="mb-6">
+              <p className="text-gray-700">Quantity:</p>
+              <div className="flex items-center space-x-4 mt-2">
+                <button className="px-2 py-1 bg-gray-200 rounded text-lg">
+                  -
+                </button>
+                <span className="text-lg">1</span>
+                <button className="px-2 py-1 bg-gray-200 rounded text-lg">
+                  +
+                </button>
+              </div>
+            </div>
+
+                
+
           </div>
         </div>
       </div>
