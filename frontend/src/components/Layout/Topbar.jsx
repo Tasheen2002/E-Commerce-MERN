@@ -5,9 +5,9 @@ import { RiTwitterXLine } from "react-icons/ri";
 const Topbar = () => {
   return (
     <nav className="bg-[#1D1D1F] text-[#F5F5F7]">
-      <div className="container mx-auto flex justify-between items-center py-3 px-4">
+      <div className="container mx-auto flex justify-between items-center py-3 px-16 ">
         {/* Social Media Icons */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-4 ">
           <a href="#" aria-label="Meta" className="hover:text-[#86868B]">
             <TbBrandMeta className="h-5 w-5" />
           </a>
