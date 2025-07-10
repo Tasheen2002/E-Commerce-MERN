@@ -112,8 +112,25 @@ const ProductDetails = () => {
               </div>
             </div>
 
-                
+            <button className="bg-black text-white py-2 px-6 rounded w-full mb-4">
+                ADD TO CART
+            </button>
 
+            <div className="mt-10 text-gray-700">
+              <h3 className="text-xl font-bold mb-4">Characteristics:</h3>
+              <table className="w-full text-left text-sm text-gray-600">
+                <tbody>
+                  <tr>
+                    <td className="py-1">Brand</td>
+                    <td className="py-1">{selectedProduct.brand}</td>
+                  </tr>
+                  <tr>
+                    <td className="py-1">Material</td>
+                    <td className="py-1">{selectedProduct.material}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
