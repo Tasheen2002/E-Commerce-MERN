@@ -119,7 +119,6 @@ const NewArrivals = () => {
     setIsDragging(false);
   };
 
-
   const scroll = (direction) => {
     const scrollAmount = direction === "left" ? -300 : 300;
     scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
@@ -189,7 +188,9 @@ const NewArrivals = () => {
       {/* Scrollabel content */}
       <div
         ref={scrollRef}
-        className="container mx-auto overflow-x-scroll flex space-x-6 relative"
+        className={`container mx-auto overflow-x-scroll flex space-x-6 relative ${
+          isDragging ? "cursor-grabbing" : "cursor-grab"
+        }`}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUpOrLeave}
