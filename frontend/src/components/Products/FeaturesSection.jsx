@@ -26,6 +26,17 @@ const FeaturesSection = () => {
             Money back guarantee
           </p>
         </div>
+
+        {/* Feature 3 */}
+        <div className="flex flex-col items-center">
+          <div className="p-4 rounded-full mb-4">
+            <HiOutlineCreditCard className="text-2xl" />
+          </div>
+          <h4 className="tracking-tighter mb-2">SECURE CHECKOUT</h4>
+          <p className="text-gray-600 text-sm tracking-tighter">
+            100% secured checkout process
+          </p>
+        </div>
       </div>
     </section>
   );
