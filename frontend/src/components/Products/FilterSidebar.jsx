@@ -108,21 +108,36 @@ const FilterSidebar = () => {
 
       {/* Color Filter */}
       <div className="mb-6">
-        <label className="block text-gray-600 font-medium mb-2">
-          Color
-        </label>
+        <label className="block text-gray-600 font-medium mb-2">Color</label>
         <div className="flex flex-wrap gap-2">
           {colors.map((color) => (
             <button
               key={color}
-              name='color'
+              name="color"
               value={color}
-              className={`w-8 h-8 rounded-full border border-gray-300 cursor-pointer transition hover:scale-105 ${filters.color === color ? "ring-2 ring-blue-500" : ""}`}
-              style={{backgroundColor: color.toLowerCase()}}
-            >
-            </button>
+              className={`w-8 h-8 rounded-full border border-gray-300 cursor-pointer transition hover:scale-105 ${
+                filters.color === color ? "ring-2 ring-blue-500" : ""
+              }`}
+              style={{ backgroundColor: color.toLowerCase() }}
+            ></button>
           ))}
         </div>
+      </div>
+
+      {/* Size Filter */}
+      <div className="mb-6">
+        <label className="block text-gray-600 font-medium mb-2">Size</label>
+        {sizes.map((size) => (
+          <div key={size} className="flex items-center mb-1">
+            <input
+              type="checkbox"
+              name="size"
+              value={size}
+              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
+            />
+            <span className="text-gray-700">{size}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
