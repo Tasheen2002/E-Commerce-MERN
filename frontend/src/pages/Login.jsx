@@ -25,6 +25,17 @@ const Login = () => {
               placeholder="Enter your email address"
             />
           </div>
+
+          <div className="mb-4">
+            <label className="block text-sm font-semibold mb-2">Password</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full p-2 border rounded"
+              placeholder="Enter your password"
+            />
+          </div>
         </form>
       </div>
     </div>
