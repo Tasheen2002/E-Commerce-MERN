@@ -1,5 +1,6 @@
 import React from "react";
-import { HiShoppingBag } from "react-icons/hi";
+import { HiShoppingBag, HiOutlineCreditCard } from "react-icons/hi";
+import { HiArrowPathRoundedSquare } from "react-icons/hi2";
 
 const FeaturesSection = () => {
   return (
