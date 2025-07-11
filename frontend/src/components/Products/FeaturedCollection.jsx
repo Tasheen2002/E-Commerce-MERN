@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import featured from "../../assets/featured.webp";
 
 const FeaturedCollection = () => {
   return (
@@ -24,6 +25,15 @@ const FeaturedCollection = () => {
           >
             Shop Now
           </Link>
+        </div>
+
+        {/* Right Content */}
+        <div className="lg:w-1/2">
+          <img
+            src={featured}
+            alt="Featured Collection"
+            className="w-full h-full object-cover lg:rounded-tr-3xl lg:rounded-br-3xl"
+          />
         </div>
       </div>
     </section>
