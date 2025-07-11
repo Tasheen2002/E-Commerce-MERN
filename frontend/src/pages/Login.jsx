@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import login from "../assets/login.webp";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -43,7 +45,24 @@ const Login = () => {
           >
             Sign In
           </button>
+
+          <p className="mt-6 text-center text-sm">
+            Don't have an account?{" "}
+            <Link to="/register" className="text-blue-500">
+              Register
+            </Link>
+          </p>
         </form>
+      </div>
+
+      <div className="hidden md:block w-1/2 bg-gray-800">
+        <div className="h-full flex flex-col justify-center items-center">
+          <img
+            src={login}
+            alt="Login to Account"
+            className="h-[750px] w-full object-cover"
+          />
+        </div>
       </div>
     </div>
   );
