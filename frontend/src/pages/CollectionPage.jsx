@@ -1,8 +1,32 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { FaFilter } from "react-icons/fa";
+import FilterSidebar from "../components/Products/FilterSidebar";
 
 const CollectionPage = () => {
   const [products, setProducts] = useState([]);
+  const sidebarRef = useRef("null");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const handleClickOutside = (e) => {
+    //Close sidebar if clicked outside
+    if (sidebarRef.current && !sidebarRef.current.contains(e.target)) {
+      setIsSidebarOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    //Add Event listner for clicks
+    document.addEventListener("mousedown", handleClickOutside);
+    //clean event listener
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,31 +51,31 @@ const CollectionPage = () => {
         },
         {
           _id: 8,
-          name: "Product 4",
+          name: "Product 8",
           price: 100,
           images: [{ url: "https://picsum.photos/500/500?random=10" }],
         },
         {
           _id: 9,
-          name: "Product 4",
+          name: "Product 9",
           price: 100,
           images: [{ url: "https://picsum.photos/500/500?random=11" }],
         },
         {
           _id: 10,
-          name: "Product 4",
+          name: "Product 10",
           price: 100,
           images: [{ url: "https://picsum.photos/500/500?random=12" }],
         },
         {
           _id: 11,
-          name: "Product 4",
+          name: "Product 11",
           price: 100,
           images: [{ url: "https://picsum.photos/500/500?random=13" }],
         },
         {
           _id: 12,
-          name: "Product 4",
+          name: "Product 12",
           price: 100,
           images: [{ url: "https://picsum.photos/500/500?random=14" }],
         },
@@ -69,6 +93,16 @@ const CollectionPage = () => {
       >
         <FaFilter className="mr-2" />
       </button>
+
+      {/* Filter Sidebar */}
+      <div
+        className={`${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } fixed inset-y-0 z-50 left-0 w-64 bg-white overflow-y-auto transition-transform duration-300 lg:static lg:translate-x-0`}
+        ref={sidebarRef}
+      >
+        <FilterSidebar />
+      </div>
     </div>
   );
 };
