@@ -29,7 +29,19 @@ const FilterSidebar = () => {
     "Beige",
     "Navy",
   ];
-  
+
+  const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
+
+  const materials = [
+    "Cotton",
+    "Wool",
+    "Denim",
+    "Polyester",
+    "Silk",
+    "Linen",
+    "Viscose",
+    "Fleece",
+  ];
 
   return <div>FilterSidebar</div>;
 };
