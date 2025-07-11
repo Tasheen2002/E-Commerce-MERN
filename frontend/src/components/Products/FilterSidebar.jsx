@@ -43,6 +43,17 @@ const FilterSidebar = () => {
     "Fleece",
   ];
 
+  const brands = [
+    "Urban Threads",
+    "Modern Fit",
+    "Street Style",
+    "Beach Breeze",
+    "Fashionista",
+    "ChicStyle",
+  ];
+
+  const genders = ["Men", "Women"];
+
   return <div>FilterSidebar</div>;
 };
 
