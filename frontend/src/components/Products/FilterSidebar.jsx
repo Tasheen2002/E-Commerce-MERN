@@ -105,6 +105,25 @@ const FilterSidebar = () => {
           </div>
         ))}
       </div>
+
+      {/* Color Filter */}
+      <div className="mb-6">
+        <label className="block text-gray-600 font-medium mb-2">
+          Color
+        </label>
+        <div className="flex flex-wrap gap-2">
+          {colors.map((color) => (
+            <button
+              key={color}
+              name='color'
+              value={color}
+              className={`w-8 h-8 rounded-full border border-gray-300 cursor-pointer transition hover:scale-105 ${filters.color === color ? "ring-2 ring-blue-500" : ""}`}
+              style={{backgroundColor: color.toLowerCase()}}
+            >
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
