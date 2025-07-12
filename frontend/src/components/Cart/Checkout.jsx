@@ -65,6 +65,21 @@ const Checkout = () => {
                 required
               />
             </div>
+            <div>
+              <label className="block text-gray-700">Last Name</label>
+              <input
+                type="text"
+                value={shippingAddress.lastName}
+                onChange={(e) =>
+                  setShippingAddress({
+                    ...shippingAddress,
+                    lastName: e.target.value,
+                  })
+                }
+                className="w-full p-2 border rounded"
+                required
+              />
+            </div>
           </div>
         </form>
       </div>
