@@ -14,11 +14,11 @@ const selectedProduct = {
   colors: ["Red", "Black"],
   images: [
     {
-      url: "https://picsum.photos/500/500?random=1",
+      url: "https://picsum.photos/500/500?random=11",
       altText: "Stylish Jacket 1",
     },
     {
-      url: "https://picsum.photos/500/500?random=2",
+      url: "https://picsum.photos/500/500?random=21",
       altText: "Stylish Jacket 2",
     },
   ],
