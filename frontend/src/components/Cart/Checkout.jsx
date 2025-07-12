@@ -24,6 +24,7 @@ const cart = {
 
 const Checkout = () => {
   const navigate = useNavigate();
+  const [checkoutId, setCheckoutId] = useState(null);
   const [shippingAddress, setShippingAddress] = useState({
     firstName: "",
     lastName: "",
@@ -158,6 +159,21 @@ const Checkout = () => {
               className="w-full p-2 border rounded"
               required
             />
+          </div>
+          <div className="mt-6">
+            {!checkoutId ? (
+              <button
+                type="submit"
+                className="w-full bg-black text-white py-3 rounded"
+              >
+                Continue to Payment
+              </button>
+            ) : (
+              <div>
+                <h3 className="text-lg mb-4">Pay with Paypal</h3>
+                
+              </div>
+            )}
           </div>
         </form>
       </div>
