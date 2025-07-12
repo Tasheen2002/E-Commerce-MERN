@@ -50,7 +50,21 @@ const Checkout = () => {
           </div>
           <h3 className="text-lg mb-4">Delivery</h3>
           <div className="mb-4 grid grid-cols-2 gap-4">
-            
+            <div>
+              <label className="block text-gray-700">First Name</label>
+              <input
+                type="text"
+                value={shippingAddress.firstName}
+                onChange={(e) =>
+                  setShippingAddress({
+                    ...shippingAddress,
+                    firstName: e.target.value,
+                  })
+                }
+                className="w-full p-2 border rounded"
+                required
+              />
+            </div>
           </div>
         </form>
       </div>
