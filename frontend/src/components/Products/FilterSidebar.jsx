@@ -88,13 +88,21 @@ const FilterSidebar = () => {
     updateURLParams(newFilters);
   };
 
+  const handlePriceChange = (e) => {
+    const newPrice = e.target.value;
+    setPriceRange([0, newPrice]);
+    const newFilters = { ...filters, minPrice: 0, maxPrice: newPrice };
+    setFilters(newFilters);
+    updateURLParams(newFilters);
+  };
+
   const updateURLParams = (newFilters) => {
     const params = new URLSearchParams();
     //{category: "Top Wear", size: ["XS","S"]}
     Object.keys(newFilters).forEach((key) => {
-      if(Array.isArray(newFilters[key]) && newFilters[key].length > 0){
+      if (Array.isArray(newFilters[key]) && newFilters[key].length > 0) {
         params.append(key, newFilters[key].join(","));
-      } else if (newFilters[key]){
+      } else if (newFilters[key]) {
         params.append(key, newFilters[key]);
       }
     });
@@ -116,6 +124,7 @@ const FilterSidebar = () => {
               type="radio"
               name="category"
               value={category}
+              checked={filters.category === category}
               onClick={handleFilterChange}
               className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
             />
@@ -133,6 +142,7 @@ const FilterSidebar = () => {
               type="radio"
               name="gender"
               value={gender}
+              checked={filters.gender === gender}
               onClick={handleFilterChange}
               className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
             />
@@ -169,7 +179,8 @@ const FilterSidebar = () => {
               type="checkbox"
               name="size"
               value={size}
-              onClick={handleFilterChange}
+              onChange={handleFilterChange}
+              checked={filters.size.includes(size)}
               className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
             />
             <span className="text-gray-700">{size}</span>
@@ -186,7 +197,8 @@ const FilterSidebar = () => {
               type="checkbox"
               name="material"
               value={material}
-              onClick={handleFilterChange}
+              onChange={handleFilterChange}
+              checked={filters.material.includes(material)}
               className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
             />
             <span className="text-gray-700">{material}</span>
@@ -203,7 +215,8 @@ const FilterSidebar = () => {
               type="checkbox"
               name="brand"
               value={brand}
-              onClick={handleFilterChange}
+              onChange={handleFilterChange}
+              checked={filters.brand.includes(brand)}
               className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
             />
             <span className="text-gray-700">{brand}</span>
@@ -221,6 +234,8 @@ const FilterSidebar = () => {
           name="priceRange"
           min={0}
           max={100}
+          value={priceRange[1]}
+          onChange={handlePriceChange}
           className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer"
         />
         <div className="flex justify-between text-gray-600 mt-2">
