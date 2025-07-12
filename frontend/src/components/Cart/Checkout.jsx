@@ -144,6 +144,21 @@ const Checkout = () => {
               required
             />
           </div>
+          <div className="mb-4">
+            <label className="block text-gray-700">Phone</label>
+            <input
+              type="text"
+              value={shippingAddress.phone}
+              onChange={(e) =>
+                setShippingAddress({
+                  ...shippingAddress,
+                  phone: e.target.value,
+                })
+              }
+              className="w-full p-2 border rounded"
+              required
+            />
+          </div>
         </form>
       </div>
     </div>
