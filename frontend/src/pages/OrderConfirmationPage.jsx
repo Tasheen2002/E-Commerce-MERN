@@ -42,7 +42,7 @@ const OrderConfirmationPage = () => {
 
       {checkout && (
         <div className="p-6 rounded-lg border">
-          <div className="flex justify-between mb-20">
+          <div className="flex justify-between mb-6">
             {/* Order ID & Date */}
             <div>
               <h2 className="text-xl font-semibold">
@@ -60,6 +60,29 @@ const OrderConfirmationPage = () => {
                 {calculateEstimatedDelivery(checkout.createdAt)}
               </p>
             </div>
+          </div>
+
+          {/* Ordered Items */}
+          <div className="mb-20">
+            {checkout.checkoutItems.map((item) => (
+              <div key={item.productId} className="flex items-center mb-4">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-16 h-16 object-cover rounded-md mr-4"
+                />
+                <div>
+                  <h4 className="text-md font-semibold">{item.name}</h4>
+                  <p className="text-sm text-gray-500">
+                    {item.color} | {item.size}
+                  </p>
+                </div>
+                <div className="ml-auto text-right">
+                  <p className="text-md">${item.price}</p>
+                  <p className="text-sm text-gray-500">Qty: {item.quantity}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       )}
