@@ -20,7 +20,7 @@ const cart = {
       image: "https://picsum.photos/200/?random=2",
     },
   ],
-  totlatprice: 195,
+  totlalprice: 195,
 };
 
 const Checkout = () => {
@@ -184,7 +184,7 @@ const Checkout = () => {
               <div>
                 <h3 className="text-lg mb-4">Pay with Paypal</h3>
                 <PayPalButton
-                  amount={100}
+                  amount={10000}
                   onSuccess={handlePaymentSuccess}
                   onError={(err) => {
                     alert("Payment Failed. Try Again.");
@@ -194,6 +194,7 @@ const Checkout = () => {
             )}
           </div>
         </form>
+        
       </div>
     </div>
   );

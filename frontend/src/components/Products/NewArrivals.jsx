@@ -170,7 +170,7 @@ const NewArrivals = () => {
           </button>
           <button
             onClick={() => scroll("right")}
-            className={`p-2 rounded border ${
+            className={`p-3 rounded border ${
               canScrollRight
                 ? "bg-white text-black"
                 : "bg-gray-200 text-gray-400 cursor-not-allowed"
