@@ -38,7 +38,7 @@ const Footer = () => {
         {/* Shop Links */}
         <div>
           <h3 className="text-lg text-gray-800 mb-4">Shop</h3>
-          <ul className="space-y-2 text-gray-600 px-3">
+          <ul className="space-y-2 text-gray-600">
             <li>
               <Link
                 to="/collections/all?gender=Men"
@@ -76,7 +76,7 @@ const Footer = () => {
         {/* Support Links */}
         <div>
           <h3 className="text-lg text-gray-800 mb-4">Support</h3>
-          <ul className="space-y-2 text-gray-600 px-3">
+          <ul className="space-y-2 text-gray-600">
             <li>
               <Link to="#" className="hover:text-gray-500 transition-colors">
                 Contact Us
