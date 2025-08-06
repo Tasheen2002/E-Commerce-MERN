@@ -1,6 +1,12 @@
 import React from "react";
 
 const OrderConfirmationPage = () => {
+  const calculateEstimatedDelivery = (createdAt) => {
+    const orderDate = new Date(createdAt);
+    orderDate.setDate(orderDate.getDate() + 10); // Add 10 days to the order date
+    return orderDate.toLocaleDateString();
+  };
+
   const checkout = {
     _id: "12345",
     createdAt: new Date(),
@@ -34,19 +40,27 @@ const OrderConfirmationPage = () => {
         Thank You For Your Order!
       </h1>
 
-      {checkout&&(
+      {checkout && (
         <div className="p-6 rounded-lg border">
-            <div className="flex justify-between mb-20">
-                {/* Order ID & Date */}
-                <div>
-                    <h2 className="text-xl font-semibold">
-                        Order ID: {checkout._id}
-                    </h2>
-                    <p className="text-gray-500">
-                        Order Date:{new Date(checkout.createdAt).toLocaleDateString()}
-                    </p>
-                </div>
+          <div className="flex justify-between mb-20">
+            {/* Order ID & Date */}
+            <div>
+              <h2 className="text-xl font-semibold">
+                Order ID: {checkout._id}
+              </h2>
+              <p className="text-gray-500">
+                Order Date:{new Date(checkout.createdAt).toLocaleDateString()}
+              </p>
             </div>
+
+            {/* Estimated Delivery */}
+            <div>
+              <p className="text-emerald-700 text-sm">
+                Estimated Delivery:{" "}
+                {calculateEstimatedDelivery(checkout.createdAt)}
+              </p>
+            </div>
+          </div>
         </div>
       )}
     </div>
