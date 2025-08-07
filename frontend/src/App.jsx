@@ -11,6 +11,7 @@ import ProductDetails from "./components/Products/ProductDetails";
 import Checkout from "./components/Cart/Checkout";
 import OrderConfirmationPage from "./pages/OrderConfirmationPage";
 import OrderDetails from "./pages/OrderDetails";
+import MyOrdersPage from "./pages/MyOrdersPage";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
             element={<OrderConfirmationPage />}
           />
           <Route path="order/:id" element={<OrderDetails />} />
+          <Route path="my-orders" element={<MyOrdersPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
