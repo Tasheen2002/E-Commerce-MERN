@@ -16,6 +16,14 @@ const AdminLayout = () => {
         </button>
         <h1 className="ml-4 text-xl font-medium">Admin Dashboard</h1>
       </div>
+
+      {/* Overlay for mobile sidebar */}
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 z-10 bg-black bg-opacity-50 md:hidden"
+          onClick={toggleSidebar}
+        ></div>
+      )}
     </div>
   );
 };
